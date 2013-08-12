@@ -10,13 +10,14 @@ Possible issues:
   - I might automate exporting JAVA_HOME in a next release.
   - Also, having everything start with the same prefix (filename) is annonying when typing. I'll think about a way to fix this while retaining uniqueness of filenames.
 
-# Change Log
-# v1.1
-#  - Made unique filenames (i.e. file will be filename + "-bonusScript.sh")
-#   - Added summary stats after creating the bash script:
-#		- how many people with how much bonus
-#	- Added logging to an output file. 
-#
-# v1.0
-#	- basic functionality: took in a file name, wrote out a bunch of bonus commands to a bash script file
+
+Change Log
+v1.1
+ - Made unique filenames (i.e. file will be filename + "-bonusScript.sh")
+ - Added summary stats after creating the bash script:
+ - how many people with how much bonus
+ - Added logging to an output file. 
+
+v1.0
+ - basic functionality: took in a file name, wrote out a bunch of bonus commands to a bash script file
 
