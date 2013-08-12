@@ -1,5 +1,5 @@
 # Simple python code for automatically bonusing workers on mTurk.
-# Written by Desmond Ong, 15 July 2013. Send comments to dco@stanford.edu.
+# Written by Desmond Ong (github.com/desmond-ong), 15 July 2013. Send comments to dco@stanford.edu.
 
 # Instructions:
 #   1) replace "filename" with the name of the input file,
