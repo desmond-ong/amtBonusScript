@@ -3,7 +3,7 @@ amtBonusScript
 
 Python script for automated bonusing of Amazon Mechanical Turk workers
 
-Instructions are given in comments at the top of the script file.
+Instructions are given in comments at the top of the script file. Please contact me at dco-at-stanford.edu with bug reports, suggestions for improvements in functionality and/or clarity, offers of help (e.g. porting to Windows), etc. Thanks!
 
 Possible issues:
   - the output log file is written for OS X / Unix file systems; I'm not sure if it'll work perfectly on Windows.
