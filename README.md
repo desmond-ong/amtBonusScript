@@ -22,6 +22,7 @@ Notes:
 
 
 Change Log
+
 v1.1, Jul 15 2014
  - Made unique filenames (i.e. file will be filename + "-bonusScript.sh")
  - Added summary stats after creating the bash script:
