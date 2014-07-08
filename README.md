@@ -8,16 +8,21 @@ Instructions are given in comments at the top of the script file. Please contact
 Known Bugs:
   - do not include ! in your bonus message, nor inverted commas like "
 
+
 Possible issues:
   - the output log file is written for OS X / Unix file systems; I'm not sure if it'll work perfectly on Windows.
   - I might automate exporting JAVA_HOME in a next release.
   - Also, having everything start with the same prefix (filename) is annonying when typing. I'll think about a way to fix this while retaining uniqueness of filenames.
 
+
 Notes:
-  - longest bonus message that worked so far is 577 characters long.
+  - longest bonus message that worked so far is 485 characters long.
+
+
+
 
 Change Log
-v1.1
+v1.1, Jul 15 2014
  - Made unique filenames (i.e. file will be filename + "-bonusScript.sh")
  - Added summary stats after creating the bash script:
  - how many people with how much bonus
