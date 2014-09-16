@@ -64,7 +64,7 @@ with open(filename, 'rU') as f:
     reader = csv.reader(f)
     for row in reader:
         if rowNum > 0: #skip the first row header
-            if row[2] > 0:  # if bonus greater than 0
+            if Decimal(row[2]) > 0:  # if bonus greater than 0
                 bonusPeople += 1;
                 bonusTotal += Decimal(row[2]);
                 bonusScripts = bonusScripts + "./grantBonus.sh -workerid " + row[1] + " -amount " + row[2] + " -assignment " + row[0] + " -reason " + "\"" + bonusMessage + "\" >> '" + currentWD + "/" + outputFilename + "-bonusResults' \n"
