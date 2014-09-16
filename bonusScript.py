@@ -79,6 +79,7 @@ summaryMessage = summaryMessage + "After running the script, console output will
 print(summaryMessage)
 
 #write the bash script for running the bonus commands
-bonusBashScript = open("bonusBashScript.sh", 'w')
+outputFilename = outputFilename + "-bonusBashScript.sh"
+bonusBashScript = open(outputFilename, 'w')
 bonusBashScript.write("#!/usr/bin/env sh\npushd " + locationofCLT + "/bin\n" + bonusScripts + "popd")
 bonusBashScript.close()
