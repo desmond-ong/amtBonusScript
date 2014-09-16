@@ -28,7 +28,7 @@ Change Log
 v1.1, Jul 15 2013
  - Made unique filenames (i.e. file will be filename + "-bonusScript.sh")
  - Added summary stats after creating the bash script:
-    - statistics of number of participants processed and their bonus amounts. There is a useful message that tells you how much you'll need to add to your AMT requester account to pay for all these bonuses.
+    - statistics of number of participants processed and their bonus amounts. The script outputs a message with how much you would need to add to your AMT requester account to pay for the bonuses.
  - Added logging to an output file. 
 
 v1.0
