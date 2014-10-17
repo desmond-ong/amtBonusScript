@@ -15,6 +15,13 @@
 # /usr/libexec/java_home
 # then run, replacing the path on the RHS of the = with the output from the above command
 # export JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+#
+# if you want to set the JAVA_HOME in your profile so that 
+# it types that command for you automatically every time you start, edit:
+#     ~/.bash_profile
+# using your favorite editor (e.g. vim), and type that export line.
+#    e.g. vim ~/.bash_profile
+#       "i" for insert, type the export line, hit escape, then type :wq, and <return> to exit.
 
 
 # Format for filename: a csv file with:
