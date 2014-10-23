@@ -22,17 +22,17 @@ Instructions are given in comments at the top of the script file. Please contact
 
 
 ### Problems and solutions:
-- Problem: if you get the following error message:
+* Problem: if you get the following error message:
 
 > An error occurred: Error #1 for RequestId: XXXXX - AWS.MechanicalTurk.AssignmentDoesNotExist: Assignment XXXXX does not exist. (XXXXX)
 
 > com.amazonaws.mturk.service.exception.ObjectDoesNotExistException: Error #1 for RequestId: XXXXX - AWS.MechanicalTurk.AssignmentDoesNotExist: Assignment XXXXX does not exist. (XXXXX)
 
-   Solution: Check your requester credentials in the bin/mturk.properties file
+* Solution: Check your requester credentials in the bin/mturk.properties file
 
 
 
-###### Change Log
+#### Change Log
 
 v1.1, Jul 15 2013
  - Made unique filenames (i.e. file will be filename + "-bonusScript.sh")
