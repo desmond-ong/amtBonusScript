@@ -1,5 +1,6 @@
 # Simple python code for automatically bonusing workers on mTurk.
 # Written by Desmond Ong (github.com/desmond-ong), 15 July 2013. Send comments to dco@stanford.edu.
+# version 1.2, updated Jul 22, 2015
 
 # Instructions:
 #   1) replace "filename" with the name of the input file,
@@ -10,7 +11,18 @@
 #		4b) Export your javahome if necessary
 #   5) run "sh " filename "-bonusBashScript.sh"
 #	6) check filename "-bonusResults" for any errors.
-
+#
+# Format for filename: a csv file with:
+# AssignmentID (*not* HIT ID) in the first column,
+# workerID in the second column,
+# and bonus amount in the third column (in dollars, no dollar sign).
+# E.g.
+#
+# AssignmentID   WorkerID    Bonus
+# 2XXX11X1X1X1XXXXX1XXXXX1XXXXXX  X12XXXZXXXX73X  0.5
+# 2XXX1XXXXX1XXXXXX1X1XXXXXXXXXX  X13XXX4X5XXX6X  0.27
+#
+#
 # You may also need to export your javahome. First run:
 # /usr/libexec/java_home
 # then run, replacing the path on the RHS of the = with the output from the above command
@@ -22,20 +34,15 @@
 # using your favorite editor (e.g. vim), and type that export line.
 #    e.g. vim ~/.bash_profile
 #       "i" for insert, type the export line, hit escape, then type :wq, and <return> to exit.
-
-
-# Format for filename: a csv file with:
-# AssignmentID (*not* HIT ID) in the first column,
-# workerID in the second column,
-# and bonus amount in the third column (in dollars, no dollar sign).
-# E.g.
 #
-# AssignmentID   WorkerID    Bonus
-# 2XXX11X1X1X1XXXXX1XXXXX1XXXXXX  X12XXXZXXXX73X  0.5
-# 2XXX1XXXXX1XXXXXX1X1XXXXXXXXXX  X13XXX4X5XXX6X  0.27
+#
+#
 #
 # --------------
 # Change Log
+# v1.2, Jul 22, 2015
+#   - updated calculation to incorporate new AMT commission structure
+#
 # v1.1
 #	- Made unique filenames (i.e. file will be filename + "-bonusScript.sh")
 #   - Added summary stats after creating the bash script:
@@ -47,7 +54,7 @@
 
 
 
-filename = "xxx_bonus.csv"
+filename = "exampleBonusFile.csv"
 bonusMessage = "Bonus for doing my HIT :)"
 locationofCLT = "/XXX/aws-mturk-clt-1.3.1"
 
@@ -80,9 +87,17 @@ with open(filename, 'rU') as f:
 
 bonusScripts = bonusScripts + "echo 'Remember to check " + outputFilename + "-bonusResults for any errors!' \n"
 
-summaryMessage = "Done. Wrote a script for " + str(bonusPeople) + " participants with a total bonus amount of $" + str(bonusTotal) + " (excluding AMT 10% tax)" + "\n"
+if (bonusPeople<10):
+    commission = 20
+    bonusTotalWithCommission = round((bonusTotal * Decimal(1.20))*100, 1)/100
+else:
+    commission = 40
+    bonusTotalWithCommission = round((bonusTotal * Decimal(1.40))*100, 1)/100
+
+summaryMessage = "\n--- Done! Wrote a script for " + str(bonusPeople) + " participants with a total bonus amount of $" + str(bonusTotal) + " (excluding AMT comission).\n"
+summaryMessage = summaryMessage + "With a " + str(commission) + "% commission, the total cost is probably $" + str(bonusTotalWithCommission) + "\n"
 summaryMessage = summaryMessage + "Run: sh " + outputFilename + "-bonusBashScript.sh (Be sure to have your JAVA_HOME set!)" + "\n"
-summaryMessage = summaryMessage + "After running the script, console output will be copied to " + outputFilename + "-bonusResults"
+summaryMessage = summaryMessage + "After running the script, console output will be copied to " + outputFilename + "-bonusResults" + "\n"
 print(summaryMessage)
 
 #write the bash script for running the bonus commands

@@ -5,7 +5,7 @@ Python script for automated bonusing of Amazon Mechanical Turk workers.
 
 Pre-requisites: You need Amazon Command Line Tools installed and working.
 
-Instructions are given in comments at the top of the script file. Please contact me at dco-at-stanford.edu with bug reports, suggestions for improvements in functionality and/or clarity, offers of help (e.g. porting to Windows), etc. Thanks!
+Instructions are given in comments at the top of the script file. Please contact me at dco (at) stanford (dot) edu with bug reports, suggestions for improvements in functionality and/or clarity, offers of help (e.g. porting to Windows), etc. Thanks!
 
 Known Bugs:
   - do not include ! in your bonus message, nor inverted commas like "
@@ -19,13 +19,16 @@ Possible issues:
 
 Notes:
   - longest bonus message that worked so far is 485 characters long.
-
+  - As of 21 July 2015, Amazon has implemented a new commission structure. Prior, the fee that requesters paid to Amazon was a flat 10% (which includes bonuses). Thus if you bonused a worker $1.00, you would have to pay Amazon $0.10. (Assuming you don't use Masters or other qualifications). After 21 July 2015, it's 20% (if you have less than 10 assignments) or 40% (if you have 10 or more assignments).
 
 
 
 Change Log
 
-v1.1, Jul 15 2013
+v1.2, Jul 22, 2015
+ - updated calculation to incorporate new AMT commission structure
+
+v1.1, Jul 15, 2013
  - Made unique filenames (i.e. file will be filename + "-bonusScript.sh")
  - Added summary stats after creating the bash script:
     - statistics of number of participants processed and their bonus amounts. The script outputs a message with how much you would need to add to your AMT requester account to pay for the bonuses.
