@@ -9,6 +9,7 @@ Instructions are given in comments at the top of the script file. Please contact
 
 ### Known Bugs:
   - do not include ! in your bonus message, nor inverted commas like "
+  - Java Runtime Environment (JRE 8 Update 51) breaks Command Line Tools, and back-dating to at least JRE 8 Update 45 (which you can download here: http://www.oracle.com/technetwork/java/javase/downloads/java-archive-javase8-2177648.html ) will fix CLT.
 
 
 ### Possible issues:
