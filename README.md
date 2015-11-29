@@ -7,6 +7,19 @@ Pre-requisites: You need Amazon Command Line Tools installed and working.
 
 Instructions are given in comments at the top of the script file. Please contact me at dco (at) stanford (dot) edu with bug reports, suggestions for improvements in functionality and/or clarity, offers of help (e.g. porting to Windows), etc. Thanks!
 
+#### Format for filename: a csv file with:
+  - AssignmentID (*not* HIT ID) in the first column,
+  - workerID in the second column,
+  - and bonus amount in the third column (in dollars, no dollar sign).
+
+E.g.
+
+AssignmentID |  WorkerID | Bonus
+--- | --- | ---
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  | AAAAAAAAAAAAAA  | 0.5
+YYYYYYYYYYYYYYYYYYYYYYYYYYYYYY  | BBBBBBBBBBBBBB  | 0.27
+
+
 ### Known Bugs:
   - do not include ! in your bonus message, nor inverted commas like "
   - Java Runtime Environment (JRE 8 Update 51) breaks Command Line Tools, and back-dating to at least JRE 8 Update 45 (which you can download here: http://www.oracle.com/technetwork/java/javase/downloads/java-archive-javase8-2177648.html ) will fix CLT.
@@ -36,7 +49,7 @@ Instructions are given in comments at the top of the script file. Please contact
 #### Change Log
 
 v1.2, Jul 22, 2015
- - updated calculation to incorporate new AMT commission structure
+ - updated calculation to incorporate new AMT commission structure (40% on HITs with >10 assignments, 20% otherwise)
 
 v1.1, Jul 15, 2013
  - Made unique filenames (i.e. file will be filename + "-bonusScript.sh")
