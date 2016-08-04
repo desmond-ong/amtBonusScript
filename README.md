@@ -34,6 +34,7 @@ YYYYYYYYYYYYYYYYYYYYYYYYYYYYYY  | BBBBBBBBBBBBBB  | 0.27
 ### Notes:
   - longest bonus message that worked so far is 485 characters long.
   - As of 21 July 2015, Amazon has implemented a new commission structure. Prior, the fee that requesters paid to Amazon was a flat 10% (which includes bonuses). Thus if you bonused a worker $1.00, you would have to pay Amazon $0.10. (Assuming you don't use Masters or other qualifications). After 21 July 2015, it's 20% (if you have less than 10 assignments) or 40% (if you have 10 or more assignments).
+  - Note added 4 Aug 2016: apparently the commission on bonuses is a flat 20% regardless of # of subjects. I have changed the comment in the bonusScript to reflect that (it doesn't change the functionality at all; just the "helpful" message that it prints out at the end.)
 
 ### Problems and solutions:
 * Problem: if you get the following error message:
