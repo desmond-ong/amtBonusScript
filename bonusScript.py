@@ -40,6 +40,8 @@
 #
 # --------------
 # Change Log
+# v1.3, Aug 4, 2016
+#   - fixed typo in calculation of new AMT commission structure
 # v1.2, Jul 22, 2015
 #   - updated calculation to incorporate new AMT commission structure
 #
@@ -87,12 +89,12 @@ with open(filename, 'rU') as f:
 
 bonusScripts = bonusScripts + "echo 'Remember to check " + outputFilename + "-bonusResults for any errors!' \n"
 
-if (bonusPeople<10):
-    commission = 20
-    bonusTotalWithCommission = round((bonusTotal * Decimal(1.20))*100, 1)/100
-else:
-    commission = 40
-    bonusTotalWithCommission = round((bonusTotal * Decimal(1.40))*100, 1)/100
+#if (bonusPeople<10):
+commission = 20
+bonusTotalWithCommission = round((bonusTotal * Decimal(1.20))*100, 1)/100
+#else:
+#    commission = 40
+#    bonusTotalWithCommission = round((bonusTotal * Decimal(1.40))*100, 1)/100
 
 summaryMessage = "\n--- Done! Wrote a script for " + str(bonusPeople) + " participants with a total bonus amount of $" + str(bonusTotal) + " (excluding AMT comission).\n"
 summaryMessage = summaryMessage + "With a " + str(commission) + "% commission, the total cost is probably $" + str(bonusTotalWithCommission) + "\n"
